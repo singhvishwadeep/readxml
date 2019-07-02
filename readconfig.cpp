@@ -37,7 +37,7 @@ void print_attr(xmlNode * node)
     }
 } 
 
-void fetch_magtek_card (xmlNode * node)
+void fetch_card (xmlNode * node)
 {
 	printf("key(%s):", node->name);
 	if (is_leaf(node))
@@ -58,25 +58,25 @@ void print_xml(xmlNode * node)
     {
         if(node->type == XML_ELEMENT_NODE)
         {
-			if ((!xmlStrcmp(node->name, (const xmlChar *)"magtek_card")))
+			if ((!xmlStrcmp(node->name, (const xmlChar *)"card")))
 			{
-				printf("Fetching magtek_card properties\n");
-				fetch_magtek_card(node);
+				printf("Fetching card properties\n");
+				fetch_card(node);
 			}
-			if ((!xmlStrcmp(node->name, (const xmlChar *)"jcm_billvalidator")))
+			if ((!xmlStrcmp(node->name, (const xmlChar *)"jbv")))
 			{
-				printf("Fetching jcm_billvalidator properties\n");
-				fetch_magtek_card(node);
+				printf("Fetching jbv properties\n");
+				fetch_card(node);
 			}
-			if ((!xmlStrcmp(node->name, (const xmlChar *)"snbc_printer")))
+			if ((!xmlStrcmp(node->name, (const xmlChar *)"print")))
 			{
-				printf("Fetching snbc_printer properties\n");
-				fetch_magtek_card(node);
+				printf("Fetching print properties\n");
+				fetch_card(node);
 			}
-			if ((!xmlStrcmp(node->name, (const xmlChar *)"witek_scanner")))
+			if ((!xmlStrcmp(node->name, (const xmlChar *)"scan")))
 			{
-				printf("Fetching witek_scanner properties\n");
-				fetch_magtek_card(node);
+				printf("Fetching scan properties\n");
+				fetch_card(node);
 			}
         }
 		print_xml(node->children);
